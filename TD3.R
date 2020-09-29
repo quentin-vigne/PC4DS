@@ -32,8 +32,9 @@ stopCluster(cl);
 rm(cl)
 
 library(foreach)
-foreach(i=1:30) %do%
-  vec2 <- rnorm
+library(doParallel)
+foreach(i=1:30, .combine = sum) %dopar% vec2 <- rnorm(1)
+
 ## Exercice 2 ####
 # 1)
 nb<-1e5
@@ -59,3 +60,19 @@ library(microbenchmark)
 library(ggplot2)
 mb <- microbenchmark(sum1,sum2, sum3)
 autoplot(mb)
+
+## Exercice 3 ####
+data(iris)
+iris
+leave.one.out <- function(i){
+  fit <- lm(Petal.Length~Petal.Width, data=iris[-i,])
+  yhat <- predict(fit, rowdata=iris[i,])
+  error <- (yhat - iris$Petal.Length[i])*(yhat - iris$Petal.Length[i])
+  return(error)
+}
+for(i in 1:nrow(iris)) print(leave.one.out(i))
+lap <- lapply(1:nrow(iris), FUN = function(i) leave.one.out(i))
+Reduce("+", lap)
+
+
+
