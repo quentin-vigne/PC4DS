@@ -8,6 +8,9 @@ simuRejec <- function(u, v, k){
 
 # simulation de U
 u = runif(min = 0, max = 1, n = 100)
+v = runif(min = 0, max = 1, n = 100)
+points <- data.frame(u,v)
+plot(points)
 # simulation de V [0, (u - 1^(1/k))^k]
 
 for (k in 1:9){
