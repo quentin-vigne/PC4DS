@@ -1,0 +1,5 @@
+new("big.matrix.descriptor", description = list(sharedType = "FileBacked", 
+    filename = "big.bin", dirname = "C:/Universite/M2/Parallel Computing/PC4DS/", 
+    totalRows = 10000L, totalCols = 5L, rowOffset = c(0, 10000
+    ), colOffset = c(0, 5), nrow = 10000, ncol = 5, rowNames = NULL, 
+    colNames = NULL, type = "double", separated = FALSE))

@@ -16,3 +16,5 @@ for (k in 1:9){
     simuRejec(u,v,k)
   }
 }
+
+matrix(,1,9)
