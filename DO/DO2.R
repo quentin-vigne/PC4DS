@@ -35,6 +35,16 @@ fonctionRejet <- function(data,k){
 }
 
 
+<<<<<<< HEAD
+for (k in 1:9){
+  for (i in 1:100){
+    v = runif(min = 0, max = (1 - u[i]^(1/k))^k, n = 100)
+    simuRejec(u,v,k)
+  }
+}
+
+matrix(,1,9)
+=======
 
 
 ## Test de la fonction ####
@@ -57,3 +67,4 @@ autoplot(mb)
 # fonctionRejet(points, 5) 209.5509 211.4783 214.1646 212.3906 216.4156 220.3735    10
 # fonctionRejet(points, 10) 209.3837 209.9065 221.1311 211.2308 212.5177 311.0771    10
 # fonctionRejet(points, 20) 211.0309 212.6861 217.0996 216.6153 218.8806 231.5863    10
+>>>>>>> 1696dce69999d61bb354ec08fdec634cbcd15d38
